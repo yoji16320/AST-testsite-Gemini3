@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV1D8MFFDV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FV1D8MFFDV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社AST | 営業支援・コンサルティング</title>
+    <style>
+        /* --- 基本設定 (Reset & Base) --- */
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* --- カラーパレット --- */
+        :root {
+            --primary-color: #0f1e3d; /* 深いネイビー */
+            --accent-color: #c92a2a;  /* 情熱の赤 */
+            --bg-light: #f4f7f6;
+            --text-white: #ffffff;
+        }
+
+        /* --- 共通クラス --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--text-white);
+        }
+        .btn-primary:hover {
+            opacity: 0.8;
+        }
+
+        /* --- ヘッダー --- */
+        header {
+            background-color: var(--text-white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        /* モバイル用調整 */
+        @media (max-width: 768px) {
+            nav { display: none; } /* 簡易的にメニュー非表示 */
+        }
+
+        /* --- ヒーローセクション --- */
+        .hero {
+            background-color: var(--primary-color);
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-white);
+            padding: 0 20px;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- セクション共通 --- */
+        section {
+            padding: 80px 0;
+        }
+
+        /* --- サービス --- */
+        .services {
+            background-color: var(--bg-light);
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* --- 強み --- */
+        .strength-item {
+            margin-bottom: 40px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 20px;
+        }
+        .strength-item h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        /* --- 導入事例 (Table) --- */
+        .case-study table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+        .case-study th, .case-study td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .case-study th {
+            background-color: var(--primary-color);
+            color: #fff;
+            width: 20%;
+        }
+
+        /* --- 会社概要 --- */
+        .company {
+            background-color: var(--bg-light);
+        }
+        .company dl {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .company dt {
+            width: 30%;
+            font-weight: bold;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .company dd {
+            width: 70%;
+            margin: 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* --- フッター --- */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.8rem;
+        }
+
+        /* --- スマホ対応 (Media Queries) --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .company dt, .company dd { width: 100%; border-bottom: none; }
+            .company dt { background-color: #eee; padding-left: 10px; margin-top: 10px;}
+            .company dd { padding-left: 10px; border-bottom: 1px solid #ccc;}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">株式会社AST</div>
+            <nav>
+                <ul>
+                    <li><a href="#services">サービス</a></li>
+                    <li><a href="#strengths">強み</a></li>
+                    <li><a href="#cases">導入事例</a></li>
+                    <li><a href="#company">会社概要</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn btn-primary">お問い合わせ</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>貴社の営業ポテンシャルを、<br>最大化する。</h1>
+            <p>戦略立案から実動まで。成果にコミットする「伴走型」営業支援パートナー。</p>
+            <a href="#contact" class="btn btn-primary">無料で相談する</a>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">こんなお悩みはありませんか？</h2>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <p>「良い商材はあるが人が足りない」「新規開拓のノウハウがない」<br>
+            その課題、株式会社ASTがプロフェッショナルチームとして解決します。</p>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">サービス内容</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>営業代行・アウトソーシング</h3>
+                    <p>テレアポから商談、クロージングまで。貴社の営業部隊として、プロが実動支援を行います。</p>
+                </div>
+                <div class="service-card">
+                    <h3>営業コンサルティング</h3>
+                    <p>「売れる仕組み」を構築。KPI設計やスクリプト作成など、組織の根本的な体質改善を支援します。</p>
+                </div>
+                <div class="service-card">
+                    <h3>テストマーケティング</h3>
+                    <p>新商品・新規事業の市場調査を実施。本格参入前のテストセールスで確かなデータを収集します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="strengths" class="container">
+        <h2 class="section-title">ASTが選ばれる理由</h2>
+        <div class="strength-item">
+            <h3>01. 「質」にこだわるプロフェッショナル集団</h3>
+            <p>単なる数打ちのアポインターではありません。貴社の商材を深く理解した経験豊富なスタッフが担当します。</p>
+        </div>
+        <div class="strength-item">
+            <h3>02. PDCAを高速で回すデータドリブン</h3>
+            <p>活動内容はすべて可視化。「なぜ売れたか」「なぜ断られたか」を分析し、翌日のアクションへ即座に反映させます。</p>
+        </div>
+        <div class="strength-item">
+            <h3>03. 柔軟なカスタマイズ性</h3>
+            <p>スポット依頼や特定プロセスのみの代行など、貴社のフェーズや予算に合わせたプランニングが可能です。</p>
+        </div>
+    </section>
+
+    <section id="cases" class="case-study">
+        <div class="container">
+            <h2 class="section-title">導入事例</h2>
+            <table>
+                <tr>
+                    <th>業種</th>
+                    <th>課題</th>
+                    <th>成果</th>
+                </tr>
+                <tr>
+                    <td>IT・SaaS企業</td>
+                    <td>リード獲得不足</td>
+                    <td>アポイント率2.5倍、月間30件の商談創出</td>
+                </tr>
+                <tr>
+                    <td>製造業</td>
+                    <td>新規開拓ノウハウなし</td>
+                    <td>半年で大手5社との取引開始</td>
+                </tr>
+                <tr>
+                    <td>人材サービス</td>
+                    <td>リソース不足</td>
+                    <td>即戦力として参画し、前年比120%達成</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="company" class="company">
+        <div class="container">
+            <h2 class="section-title">会社概要</h2>
+            <dl>
+                <dt>会社名</dt>
+                <dd>株式会社AST</dd>
+                <dt>代表取締役</dt>
+                <dd>松村 洋治</dd>
+                <dt>設立</dt>
+                <dd>20xx年xx月xx日</dd>
+                <dt>所在地</dt>
+                <dd>〒000-0000 〇〇県〇〇市〇〇区...</dd>
+                <dt>事業内容</dt>
+                <dd>営業支援事業、営業コンサルティング、マーケティング支援</dd>
+            </dl>
+        </div>
+    </section>
+
+    <section id="contact" style="background: #333; color: #fff; text-align: center;">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">お問い合わせ</h2>
+            <p>まずは現状の課題をお聞かせください。最適なプランをご提案します。</p>
+            <br>
+            <a href="#" class="btn btn-primary" style="font-size: 1.2rem;">お問い合わせフォームへ</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 株式会社AST All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
